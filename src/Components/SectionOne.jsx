@@ -60,28 +60,29 @@ const SectionOne= () => {
   };
   return (
     <div className="container">
-      
+      <h1>User Form</h1>
       <div className="Top-section">
+  
         <form onSubmit={handleSubmit}>
-        
-          <div className="flex flex-col">
+  
+          <div>
             <label>Name</label>
             <input name="name" value={inputs.name} onChange={handleChange} />
           </div>
-          <div className="flex flex-col">
+          <div>
             <label>Email</label>
             <input name="email" value={inputs.email} onChange={handleChange} />
           </div>
-          <div className="flex flex-col">
+          <div>
             <label>Age</label>
             <input name="age" value={inputs.age} onChange={handleChange} />
           </div>
-          <div className="flex flex-col">
+          <div>
             <label>phone</label>
             <input name="phone" value={inputs.phone} onChange={handleChange} />
           </div>
           
-          <button type="submit" className="w-full bg-[#014d64] text-white mt-3">
+          <button type="submit">
             {editClick ? "update" : "Add"}
           </button>
         </form>
@@ -94,7 +95,7 @@ const SectionOne= () => {
       />
       </div>
       <div>
-        <table className="w-full text-center">
+        <table>
           <thead>
             <tr>
               <th>Name</th>
@@ -104,7 +105,7 @@ const SectionOne= () => {
               <th>Actions</th>
             </tr>
           </thead>
-          <tbody className="text-white">
+          <tbody>
             {tableData.map((item, i) => (
               <tr>
                 <td>{item.name}</td>
@@ -113,17 +114,10 @@ const SectionOne= () => {
                 <td>{item.phone}</td>
                 <td>
                   <button
-                    onClick={() => handleEdit(i)}
-                    className="mr-3 text-yellow-300"
-                  >
-                    Edit
-                  </button>
+                    onClick={() => handleEdit(i)}> Edit</button>
+                  
                   <button
-                    onClick={() => handleDelete(i)}
-                    className="text-red-500"
-                  >
-                    Delete
-                  </button>
+                    onClick={() => handleDelete(i)}>Delete</button>
                 </td>
               </tr>
             ))}
